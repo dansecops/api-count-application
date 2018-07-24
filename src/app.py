@@ -28,5 +28,3 @@ def decrease_duck_count():
 def reset_duck_count():
 	db.reset_duck_count()
 	return "Duck counts resetted to 0!"
-
-
