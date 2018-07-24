@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Duck Counter Application</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+        var buttonPut = $("#put")
+        var buttonDelete = $("#delete")
+          $(buttonPut).click(function () {
+                $.ajax({
+                  type: 'PUT',
+                  url: '/duck',
+                        success: function () {
+                            alert('Success, added a duck!')
+                        },
+                        error: function () {
+                            alert('Error!')
+                        }
+                    });
+                });
+                
+          $(buttonDelete).click(function () {
+                $.ajax({
+                  type: 'DELETE',
+		  url: '/duck',
+                        success: function () {
+                            alert('Success, removed a duck!')
+                        },
+                        error: function () {
+                            alert('Error!')
+                        }
+                    });
+                });                
+});
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Duck Count App</h1>
+
+        <div class="btn-group-vertical">
+        <form action="duck" method="get" class="container">
+                <button type="submit" id="get" class="btn btn-block btn-primary">SHOW DUCK COUNT</button><br><br>
+                </form>
+                <button type="submit" id="delete" class="btn btn-block btn-primary">DECREASE DUCK COUNT</button><br><br>
+                <button type="submit" id="put" class="btn btn-block btn-primary">INCREASE DUCK COUNT</button><br><br>
+        <form action="duck" method="post" class="container">
+                <button type="submit" id="post" class="btn btn-block btn-primary">RESET DUCK COUNT</button><br><br>
+                                </form>
+</div>
+</body> 
+</html>
