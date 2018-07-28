@@ -7,7 +7,7 @@ class DbConnectorIntegrationTest(unittest.TestCase):
     def test_creates_0_value(self):
         client = MongoClient('0.0.0.0', 27017)
         client.duck_db.duckCounter.drop()
-        DbConnector()
+        ccc
         result = client.duck_db.duckCounter.find_one({'_id': 1})
         self.assertEqual(result, {'_id': 1, 'counter' : 0})
 

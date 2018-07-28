@@ -11,7 +11,7 @@ def index():
 
 @app.route(uri, methods=['GET'])
 def get_duck_count():
-	return "Current duck count : " + str(db.get_duck_count()) + " ducks." 
+	return "Current duck count : " + str(db.get_duck_count()) + " ducks."
 
 @app.route(uri, methods=['PUT'])
 def increase_duck_count():
@@ -28,3 +28,7 @@ def decrease_duck_count():
 def reset_duck_count():
 	db.reset_duck_count()
 	return "Duck counts resetted to 0!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True,host='0.0.0.0', port=8080)
